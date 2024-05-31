@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Hospitals</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div id="map"></div>
+    <select id="hospitalsDropdown">
+        {% for feature in hospitalsData.features %}
+            <option value="{{ feature.properties.OID_ }}">{{ feature.properties.Name }}</option>
+        {% endfor %}
+    </select>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
